@@ -1,35 +1,48 @@
-<!DOCTYPE html> <!--Sets the document type to an HTML file-->
-<html lang="en"> 
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!--link to Bootstrap CDN-->
+  <!-- link to Bootstrap CDN -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <!--Link to fontawesome-->
+  <!-- link to fontawesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- link to google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- link to CSS style sheet -->
   <link rel="stylesheet" href="style.css">
   <title>Work Day Scheduler</title>
 </head>
 
 <body>
-  <header class="jumbotron"> <!--bootstrap element used to style the main header element-->
-    <h1 class="display-3">Work Day Scheduler</h1> <!--The h1 element represents the main header-->
-    <p class="lead">A simple calendar app for scheduling your work day</p> <!--Paragraph tag to show a sub-header, using the Bootstrap class of .lead-->
-    <p id="currentDay" class="lead"></p> <!--represents where the current day will be generated-->
+  <!-- create header using Bootstrap jumbotron class -->
+  <header class="jumbotron">
+    <!-- h1 element to display the main header -->
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <!-- paragraph tag to show the subtitle, class='lead' is a Bootstrap style -->
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <!-- paragraph tag to show the current day and date -->
+    <p id="currentDay" class="lead"></p>
+    <!-- end of the header -->
   </header>
-  <div class="container"> <!--The div containing all of our hour block elements-->
-    <div id="hour-9" class="row time-block"> <!--div for the first row in our container.-->
-      <div class="col-md-1 hour"><!--div for the the hour block display.-->
-        9AM <!--Displays the hour tied to it's respective "time-block"-->
+  <!-- div containing all the HTML for displaying the planner.  'container' is a Bootstrap class to provide room on the sides -->
+  <div class="container">
+    <!-- div for the first row in the planner, the id indicates the hour of the day, class 'row' is from Bootstrap, time-block is a class referenced in the javacript code which is part of the code to render each row -->
+    <div id="hour-9" class="row time-block">
+      <!-- div container the text for the hour, class 'col-md-1' is from Bootstrap, making the element take only 1 column when the window size is medium or above, class 'hour' is used in CSS to style the element -->
+      <div class="col-md-1 hour">
+        <!-- text showing in the app that indicates the hour to be planned -->
+        9AM
       </div>
-      <textarea class="col-md-10 description"> <!-- Text input area for each hour block. This is where you will see the user input.-->
+      <!-- textarea div is where the text is entered. Class 'col-md-10' is Bootstrap meaning this element spans 10 columns, class 'description' is used in javascript to indicate the text to be rendered, and is also used in CSS to style the element -->
+      <textarea class="col-md-10 description">
       </textarea>
-      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button> <!--Button to save the entry to localStorage for later retrieval. Has onclick function attached via js. the i class provides styling to the button-->
+      <!-- button element used to save the text to local storage, class 'btn' is from Bootstrap to provide styling, class saveBtn is the element that javascript binds the event handler to, class 'col-md-1' is Bootstrap to contain the button in 1 column.  The <i> tag is HTML, it provides emphasis to the contents. 'fas fa-save' identifies a fontawesome icon  -->
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
     </div>
-    <!--The remaining time-blocks are the same, and therefore the code will work the same-->
+    <!-- The remaining HTML repeats for the additional rows in the planner.  The comments above apply. -->
     <div id="hour-10" class="row time-block">
       <div class="col-md-1 hour">
         10AM
@@ -95,11 +108,22 @@
       <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
     </div>
 
-    <!--These are script tags to hold our jquery and ajax documentation-->
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+  
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>REMINDER:  You have a task coming up next hour.</p>
+    </div>
+  
+  </div>
+
+    <!-- these are script tags to access jQuery, and the moment method used in the javascript file -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
-    <!--Link to our external javascript file-->
+    <!-- references the javascript code file associated with this HTML file -->
     <script src="script.js"></script>
 </body>
 

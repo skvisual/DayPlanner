@@ -1,11 +1,10 @@
-/* styles the body element. which cascades to all other elements within the body */
-body { 
-  font-family: 'Open Sans', sans-serif; 
+/* styles the body element, which cascades to all elements within the body */
+body {
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
 }
-
-/* styles the area where the user inputted text appears */
+/* styles the textarea tags, the boxes where text is entered */
 textarea{
   background: transparent;
   border: none;
@@ -14,8 +13,7 @@ textarea{
   border-left: 1px solid black;
   padding: 10px;
 }
-
-/* adds additional styles to the jumbotron element */
+/* additional styles for the Bootstrap jumbotron class */
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -23,44 +21,43 @@ textarea{
   border-radius: 0;
   border-bottom: 10px solid black;
 }
-
-/*sets the css property white-space to preserve formatting */
+/* sets the CSS property white-space to preserve new lines, spaces and tabs, and wrap the text in the textbox */
 .description{
   white-space: pre-wrap;
 }
-/* additional styling to time-block element */
+/* provides additional styling to the Bootstrap row class */
 .time-block{
   text-align: center;
   border-radius: 15px;
 }
-/* additional stying for each  */
-.row { 
+/* adding style to the Bootstrap row class */
+.row {
   white-space: pre-wrap;
-  height: 80px;
+  height: 80px;t
   border-top: 1px solid white;;
 }
-/* styling for the time-block hour display */
+/* styling for the text in the hour-of-day column */
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
 }
-/* This is what makes the past hour-blocks turn gray when they are in the past */
+/* this provide the background color for the 'past' time blocks */
 .past {
   background-color: #d3d3d3;
   color: white;
 }
-/* sets color for present box */
+/* this provide the background color for the 'present' time blocks */
 .present {
   background-color: #ff6961;
   color: white;
 }
-/* sets colors for all future blocks */
+/* this provide the background color for the 'future' time blocks */
 .future {
   background-color: #77dd77;
   color: white;
 }
-/* additional styling for the save button */
+/* styling for the 'Save' button */
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -68,10 +65,46 @@ textarea{
   background-color: #06AED5;
   color: white;
 }
-/* handles additional styling for the hover event attached to the save button. adds the small animation to the hover event */
+/* styling for 'Save' button, animates the change of color when the cursor hovers over it */
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
-
+​
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+​
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+​
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+​
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 
