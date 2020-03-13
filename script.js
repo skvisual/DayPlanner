@@ -45,4 +45,6 @@ $(document).ready(function() { // $(document) the document element, The .ready()
   //MMMM = March
   //dddd = Day
   //Do = Adds the "th, nd, rd" after a number
+
+
 });
